@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.tweet-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+textarea {
+  margin-top: 10px;
+  border-style: none none dotted none;
+  resize: none;
+  outline: none;
+  height: 35px;
+  background-color: #f4f1ec;
+}
+
+button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 0.8em;
+}

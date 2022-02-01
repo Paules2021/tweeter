@@ -1,0 +1,12 @@
+header {
+  height: 400px;
+  width: 100%;
+  margin-top: 120px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5ee5f;
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+} 
