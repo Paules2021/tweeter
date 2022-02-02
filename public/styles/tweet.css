@@ -23,6 +23,8 @@ article:hover .user-tag{
   align-items: flex-start;
   justify-items: flex-end ;
   margin-top: 10px;
+  padding-right: 15px ;
+  padding-left: 15px;
 }
 
 .tweets footer {
@@ -61,8 +63,7 @@ article:hover .user-tag{
 }
 
 .user-tag {
-  color: #a1caf1;
-  display: none;
+  color: #105fa8;
 }
 
 article i:hover{
