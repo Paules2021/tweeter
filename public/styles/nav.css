@@ -1,5 +1,5 @@
 nav {
-  height: 120px;
+  height: 60px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -8,29 +8,24 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   position: fixed;
-  z-index: 1;
   top: 0;
 }
 
-#logo {
-  font-size: 1.5em;
-  padding-top: 25px;
+nav span {
+  font-family: 'Bungee', sans-serif;
+  margin: 1.5em;
+  margin-left: 2%;
 }
 
-#tweet {
+#writeNewText {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 1.5em;
 }
 
-.nav-container {
-  font-family: 'Source Sans Pro', sans-serif;
-  display: flex;
-  justify-content: center;
-  padding-top: 8px;
+#writeNewText * {
+  margin: 0;
+  font-size: 16px;
 }
-
-.heavy-font {
-  font-weight: 600;
-} 

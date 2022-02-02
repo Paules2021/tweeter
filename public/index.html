@@ -17,35 +17,33 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script src="https://kit.fontawesome.com/6fc3c812b3.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="./scripts/button-click.js"></script>
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <div id="logo">
-        <span>tweeter</span>
-      </div>
-      <div id="tweet">
-        <div class="nav-container">
-          <span><span class="heavy-font">Write</span> a new tweet</span>
-        </div>
-        <div class="nav-container">
-          <i class="fas fa-angle-double-down"></i>
-        </div>
+      <span>tweeter</span>
+      <div id="writeNewText">
+        <p><b>Write</b> a new tweet</p>
+        <i class="fas fa-angle-double-down" style="color: white"></i>
       </div>
     </nav>
-    <header>
+    <header class="main-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-      <br>
       <div>
           <h2>Pouya Elishaee</h2>
       </div>
@@ -54,15 +52,75 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <form method="POST" action="/tweets/">
-          <label for="tweet-text" class="heavy-font">What are you humming about?</label>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div class="tweet-button bungee-font">
+          <div class="footer-container">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <article class="tweets">
+        <header class="tweet-container">
+          <div class="tweet-header">
+            <img src="https://i.imgur.com/73hZDYK.png" />
+            <p>Alice</p>
+          </div>
+          <p class="user-tag">@eye</p>
+        </header>
+        <div class="tweet-container">
+          <p class="content">I can see again</p>
+        </div>
+        <footer class="tweet-container">
+          <p>Date:2 days ago</p>
+          <div class="hover">
+            <i class="far fa-flag" id="flag"></i>
+            <i class="far fa-heart" id="heart"></i>
+            <i class="fas fa-retweet" id="retweet"></i>
+          </div>
+        </footer>
+      </article>
+      <article class="tweets">
+        <header class="tweet-container">
+          <div class="tweet-header">
+            <img src="https://i.imgur.com/73hZDYK.png" />
+            <p>Ben</p>
+          </div>
+          <p class="user-tag">@Riodel</p>
+        </header>
+        <div class="tweet-container">
+          <p class="content">Hello Everyone</p>
+        </div>
+        <footer class="tweet-container">
+          <p>Date:5 days ago</p>
+          <div>
+            <i class="far fa-flag" id="flag"></i>
+            <i class="far fa-heart" id="heart"></i>
+            <i class="fas fa-retweet" id="retweet"></i>
+          </div>
+        </footer>
+      </article>
+      <article class="tweets">
+        <header class="tweet-container">
+          <div class="tweet-header">
+            <img src="https://i.imgur.com/73hZDYK.png" />
+            <p>Alen</p>
+          </div>
+          <p class="user-tag">@mana</p>
+        </header>
+        <div class="tweet-container">
+          <p class="content">I'm alive</p>
+        </div>
+        <footer class="tweet-container">
+          <p>Date:10 days ago</p>
+          <div>
+            <i class="far fa-flag" id="flag"></i>
+            <i class="far fa-heart" id="heart"></i>
+            <i class="fas fa-retweet" id="retweet"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
