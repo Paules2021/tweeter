@@ -23,6 +23,7 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/6fc3c812b3.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -60,66 +61,7 @@
           </div>
         </form>
       </section>
-      <article class="tweets">
-        <header class="tweet-container">
-          <div class="tweet-header">
-            <img src="https://i.imgur.com/73hZDYK.png" />
-            <p>Alice</p>
-          </div>
-          <p class="user-tag">@eye</p>
-        </header>
-        <div class="tweet-container">
-          <p class="content">I can see again</p>
-        </div>
-        <footer class="tweet-container">
-          <p>Date:2 days ago</p>
-          <div class="hover">
-            <i class="far fa-flag" id="flag"></i>
-            <i class="far fa-heart" id="heart"></i>
-            <i class="fas fa-retweet" id="retweet"></i>
-          </div>
-        </footer>
-      </article>
-      <article class="tweets">
-        <header class="tweet-container">
-          <div class="tweet-header">
-            <img src="https://i.imgur.com/73hZDYK.png" />
-            <p>Ben</p>
-          </div>
-          <p class="user-tag">@Riodel</p>
-        </header>
-        <div class="tweet-container">
-          <p class="content">Hello Everyone</p>
-        </div>
-        <footer class="tweet-container">
-          <p>Date:5 days ago</p>
-          <div>
-            <i class="far fa-flag" id="flag"></i>
-            <i class="far fa-heart" id="heart"></i>
-            <i class="fas fa-retweet" id="retweet"></i>
-          </div>
-        </footer>
-      </article>
-      <article class="tweets">
-        <header class="tweet-container">
-          <div class="tweet-header">
-            <img src="https://i.imgur.com/73hZDYK.png" />
-            <p>Alen</p>
-          </div>
-          <p class="user-tag">@mana</p>
-        </header>
-        <div class="tweet-container">
-          <p class="content">I'm alive</p>
-        </div>
-        <footer class="tweet-container">
-          <p>Date:10 days ago</p>
-          <div>
-            <i class="far fa-flag" id="flag"></i>
-            <i class="far fa-heart" id="heart"></i>
-            <i class="fas fa-retweet" id="retweet"></i>
-          </div>
-        </footer>
-      </article>
+      <section id="tweets"></section>
     </main>
   </body>
 </html>
