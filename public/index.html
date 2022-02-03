@@ -52,7 +52,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <form action="/tweets" method="POST">
+        <div class="error"></div>
+        <form id="new-tweet-form" action="/tweets" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="footer-container">
@@ -62,6 +63,7 @@
         </form>
       </section>
       <section id="tweets"></section>
+      <i class="fas fa-arrow-circle-up" id="return-to-home"></i>  
     </main>
   </body>
 </html>
