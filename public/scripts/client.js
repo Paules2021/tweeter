@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
 //Code inside will only run once the page DOM is ready for JavaScript 
 $(function () {
@@ -40,7 +15,40 @@ $(function () {
     return div.innerHTML;
   }
 
+  //function to open and close the text area
+  const openTextArea = function (boolForScroll = false) {
+    if ($('.new-tweet').is(':hidden') || boolForScroll) {
+      $('.new-tweet').slideDown('slow', () => {
+        $('#tweet-text').focus();
+      });
+    } else {
+      $('.new-tweet').slideUp('slow');
+    }
+  }
 
+  //if the user scrolls to/away from the top of the page show/hide the return-to-home button 
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop()) {
+      $('#return-to-home').fadeIn();
+    } else {
+      $('#return-to-home').fadeOut();
+    }
+  })
+
+
+  //return to home on click method
+  $('#return-to-home').on('click', function () {
+    $("html, body").animate({ scrollTop: 0 }, 500, function () { });
+    openTextArea(true);
+  })
+
+  //write new text on click 
+  $('#writeNewText').on('click', function (event) {
+    openTextArea();
+  })
+
+
+  //function to create tweet elements
   const createTweetElement = function (tweet) {
     let newTweetHtml = `
       <article class="tweets">
@@ -55,7 +63,7 @@ $(function () {
             <p class="content">${escape(tweet.content.text)}</p>
           </div>
           <footer class="tweet-container">
-            <p>${escape(timeago.format(data.created_at))}</p>
+            <p>${escape(timeago.format(tweet.created_at))}</p>
             <div>
               <i class="far fa-flag" id="flag"></i>
               <i class="far fa-heart" id="heart"></i>
@@ -64,11 +72,11 @@ $(function () {
           </footer>
         </article>
       `;
-      return newTweetHtml;
+    return newTweetHtml;
   }
 
 
-// Fetch tweet 
+  // Fetch tweet 
   const loadTweets = function () {
     $.ajax({
       url: '/tweets',
@@ -81,8 +89,8 @@ $(function () {
       .always(() => console.log('Succesful request'));
   }
 
-  
-//show tweets  
+
+  //show tweets+-  
   const renderTweets = function (tweets) {
     $('#tweets').empty();
 
@@ -92,7 +100,7 @@ $(function () {
     }
   }
 
-//handle submit 
+  //handle submit 
   $('#new-tweet-form').on('submit', function (event) {
     event.preventDefault();
 
@@ -109,18 +117,18 @@ $(function () {
     }
     const formContent = $(this).serialize();
 
-//post tweet    
+    //post tweet    
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: formContent
     })
-    .done(() => loadTweets())
-    .fail(() => console.log("Something went wrong!"))
-    .always(() => console.log("Successfull"));
+      .done(() => loadTweets())
+      .fail(() => console.log("Something went wrong!"))
+      .always(() => console.log("Successfull"));
 
     $("#tweet-text").val("");
-    $(this).find('counter').val('140');
+    $(this).find('.counter').val('140');
   });
 
   loadTweets();

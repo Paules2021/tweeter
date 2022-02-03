@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,9 +17,11 @@ html {
  */
 
  main {
+  display: flex;
+  color: #545149;
+  flex-direction: column;
   width: 90%;
-  align-self: center;
-  background-color: inherit;
+  margin: auto;
 }
 
 body {
@@ -27,6 +31,51 @@ body {
   font-family: "Source Sans Pro", "sans-serif";
 }
 
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .blue {
+  color: #4056a1;
+}
+
+.red {
+  color: red;
+}
+
+.standard {
+  color: #545149;
+}
+
+#return-to-home {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 60px;
+  color: red;
+  display: none;
+}
+
+#return-to-home:hover {
+  animation-name: bounce-1;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} 

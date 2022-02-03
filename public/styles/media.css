@@ -1,0 +1,32 @@
+@media only screen and (min-width: 1024px){
+  .container {
+    flex-direction: row;
+    margin-top: 60px;
+    justify-content: space-between;
+  }
+
+  main {
+    width: 42%;
+    margin: 48px 40px 0 0;
+  }
+
+  .main-header {
+    margin-top: 48px;
+    margin-left: 40px;
+    width: 40%;
+  }
+
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+    position: fixed;
+  }
+
+  .new-tweet {
+    margin: 0 0 2em 0;
+  }
+
+  .tweets {
+    margin: 0 0 1em 0;
+  }
+} 
